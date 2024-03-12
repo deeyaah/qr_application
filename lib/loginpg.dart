@@ -1,0 +1,85 @@
+import 'package:flutter/material.dart';
+import 'package:untitled2/regpag.dart';
+import 'package:untitled2/scan.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'LOGIN',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+            ),
+          ),
+        Container(
+          width: 850,
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'enter your roll no',
+              hintStyle: TextStyle(color: Colors.white),
+            ),
+            ),
+          ),
+  SizedBox(height: 40),
+          Container(
+            width: 850,
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'enter your password',
+                  hintStyle: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+          SizedBox(height: 40),
+          TextButton(onPressed: null, child: Text('login',style: TextStyle(color: Colors.white),),
+            style:TextButton.styleFrom(backgroundColor:Colors.teal ) ,
+          ),
+Text('dont have accont?',
+  style: TextStyle(
+    fontSize: 12,
+    color: Colors.white,
+    fontWeight: FontWeight.w800,
+  )
+  ),
+          TextButton(onPressed: (){
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context)=> const Reg()),
+            );
+          }, child: Text("Register",style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+            fontWeight: FontWeight.w800,
+          ),)),
+          TextButton(onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context)=> const Scan()),
+            );
+          }, child: Text("Register",style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+            fontWeight: FontWeight.w800,
+          ),)),
+        ],
+      )),
+      backgroundColor: Colors.tealAccent,
+
+    );
+  }
+}
