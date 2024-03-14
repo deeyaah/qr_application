@@ -46,9 +46,16 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           SizedBox(height: 40),
-          TextButton(onPressed: null, child: Text('login',style: TextStyle(color: Colors.white),),
-            style:TextButton.styleFrom(backgroundColor:Colors.teal ) ,
-          ),
+          TextButton(onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context)=> const Scan()),
+            );
+          }, child: Text("login",style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+            fontWeight: FontWeight.w800,
+          ),)),
 Text('dont have accont?',
   style: TextStyle(
     fontSize: 12,
@@ -66,16 +73,7 @@ Text('dont have accont?',
             color: Colors.white,
             fontWeight: FontWeight.w800,
           ),)),
-          TextButton(onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context)=> const Scan()),
-            );
-          }, child: Text("Register",style: TextStyle(
-            fontSize: 14,
-            color: Colors.white,
-            fontWeight: FontWeight.w800,
-          ),)),
+
         ],
       )),
       backgroundColor: Colors.tealAccent,

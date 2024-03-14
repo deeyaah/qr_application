@@ -67,14 +67,16 @@ class _RegState extends State<Reg> {
           ),
           SizedBox(height: 40),
           SizedBox(height: 40),
-          TextButton(
-            onPressed: null,
-            child: Text(
-              'register',
-              style: TextStyle(color: Colors.white),
-            ),
-            style: TextButton.styleFrom(backgroundColor: Colors.teal),
-          ),
+          TextButton(onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context)=> const Scan()),
+            );
+          }, child: Text("register",style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+            fontWeight: FontWeight.w800,
+          ),)),
 
         ],
       )),
